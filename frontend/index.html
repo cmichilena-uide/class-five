@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi tienda de tecnología</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h3>TecnoTienda</h3>
+        <ul class="nav_list">
+          <li class="nav_item"><a href="#products">Productos</a></li>
+          <li class="nav_item" id="user_info" hidden>
+            <span id="user_name"></span>
+            <button type="button" id="logout_button">Cerrar sesión</button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <aside>
+        <div id="auth_section">
+          <h2>Iniciar sesión</h2>
+          <form id="login_form">
+            <label>Usuario</label>
+            <input type="text" id="login_username" required />
+            <label>Contraseña</label>
+            <input type="password" id="login_password" required />
+            <button type="submit">Ingresar</button>
+          </form>
+          <p id="login_message"></p>
+
+          <h2>Registrarse</h2>
+          <form id="register_form">
+            <label>Usuario</label>
+            <input type="text" id="register_username" required />
+            <label>Email</label>
+            <input type="email" id="register_email" required />
+            <label>Contraseña (mínimo 8 caracteres)</label>
+            <input type="password" id="register_password" required />
+            <button type="submit">Crear cuenta</button>
+          </form>
+          <p id="register_message"></p>
+        </div>
+
+        <div id="admin_section" hidden>
+          <h2 id="add">Agregar producto</h2>
+          <form id="product_form">
+            <label>Nombre</label>
+            <input type="text" id="name" required />
+            <label>Descripción</label>
+            <textarea id="description" required></textarea>
+            <label>Precio</label>
+            <input type="number" id="price" step="0.01" required />
+            <label>Stock</label>
+            <input type="number" id="stock" required />
+            <label>URL de la imagen (opcional)</label>
+            <input type="url" id="image" placeholder="https://..." />
+            <button type="submit" id="save_button">Guardar</button>
+            <button type="button" id="cancel_button" hidden>Cancelar</button>
+          </form>
+          <p id="form_message"></p>
+
+          <h2 id="search">Buscar producto</h2>
+          <form id="search_form">
+            <label>ID</label>
+            <input type="number" id="search_id" required />
+            <button type="submit">Buscar</button>
+          </form>
+          <p id="search_message"></p>
+          <div id="search_result"></div>
+        </div>
+      </aside>
+      <main>
+        <h1>Bienvenido a mi tienda</h1>
+        <div id="products"></div>
+      </main>
+    </div>
+    <footer>
+      <p>Tarea 5 - Backend modular con FastAPI</p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
